@@ -1,0 +1,108 @@
+.site-header {
+	position: relative;
+	overflow: hidden;
+	min-height: 62px;
+}
+
+.site-branding {
+	position: relative;
+	z-index: 1;
+	min-height: 70px;
+}
+
+.site-title {
+	font-size: 1.667em;
+	line-height: 1.25;
+	margin: 2.75em auto 0.25em;
+	padding: 0 0.75em;
+	text-align: center;
+
+	a {
+		color: $theme__black;
+	}
+
+	@media screen and (min-width: $query__medium) {
+		font-size: 2.333em;
+	}
+
+	@media screen and (min-width: $query__large) {
+		font-size: 5.55em;
+	}
+}
+
+.site-description {
+	font-size: 0.778em;
+	font-weight: 300;
+	margin: 0 0 1.5em;
+	padding: 0 1.5em;
+	text-align: center;
+	text-transform: none;
+	color: $theme__gray;
+
+	@media screen and (min-width: $query__medium) {
+		font-size: 1.333em;
+	}
+
+	@media screen and (min-width: $query__large) {
+		font-size: 1.667em;
+		margin: 0 auto 3em;
+		padding: 0;
+	}
+}
+
+.site-title,
+.site-description {
+
+	@media screen and (min-width: $query__large) {
+		width: 1000px;
+		margin-top: 0.75em;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary,
+.taxonomy-description {
+	margin: 1.5em auto 0;
+	padding: 0 1.5em;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.page-content,
+.entry-content,
+.entry-summary,
+.entry-title,
+.entry-footer,
+.comments-area,
+.site-info,
+.entry-author,
+.entry-meta,
+.page-title,
+.taxonomy-description {
+
+
+  @media screen and (min-width: $query__medium) {
+    width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+  }
+}

@@ -1,0 +1,17 @@
+.sidebar-open {
+
+  .site {
+    @media screen and (min-width: $query__medium) {
+      left: -$slidemenu__width;
+    }
+  }
+}
+
+.site {
+
+  @media screen and (min-width: $query__medium) {
+    position: relative;
+    left: 0;
+    transition: 0.3s left ease-in-out;
+  }
+}

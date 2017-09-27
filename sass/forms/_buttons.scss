@@ -1,0 +1,26 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 2px solid $theme__black;
+	background: transparent;
+	box-shadow: none;
+	text-shadow: none;
+	color: $theme__black;
+	@include font-size(1);
+	font-weight: bold;
+	line-height: 1;
+	padding: 0.75em;
+	cursor: pointer;
+	transition: $standard__transition;
+	text-transform: uppercase;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+	}
+}
