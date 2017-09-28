@@ -52,14 +52,14 @@ if ( ! function_exists( 'lifebegan_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'lifebegan' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'lifebegan' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="entry-categories">' . '<span class="heading">Categories: </span>' . esc_html__( '%1$s', 'lifebegan' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'lifebegan' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'lifebegan' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="entry-tags">' . '<span class="heading">Tags: </span>' . esc_html__( '%1$s', 'lifebegan' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -100,3 +100,16 @@ if ( ! function_exists( 'lifebegan_entry_footer' ) ) :
 		);
 	}
 endif;
+
+if ( ! function_exists( 'lifebegan_post_navigation' ) ) {
+
+	/**
+	 * Post navigation (previous / next) for single posts.
+	 */
+	 function lifebegan_post_navigation() {
+		 the_post_navigation( array(  
+			 'next_text'		=> __( 'Next Post', 'lifebegan' ),
+			 'prev_text'		=> __( 'Previous Post', 'lifebegan' ),
+		 ) );
+	 }
+}

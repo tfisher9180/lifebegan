@@ -159,10 +159,80 @@
 	}
 }
 
+.single {
+
+	.menu-toggle {
+		border-color: $theme__single-header;
+
+		&:hover {
+			color: #fff;
+			border-color: #fff;
+
+			.lines,
+			.lines:before,
+			.lines:after {
+				background: #fff;
+			}
+		}
+
+		&.toggled-on {
+
+			.lines {
+				background: transparent;
+			}
+
+			.lines:before,
+			.lines:after {
+				background: #fff;
+			}
+		}
+
+		.lines,
+		.lines:before,
+		.lines:after {
+			background: $theme__single-header;
+		}
+	}
+
+	.slide-menu {
+		position: relative;
+		z-index: 99;
+		display: none;
+		width: 100%;
+		padding: 1.5em;
+		background: $theme__black;
+
+		&.toggled-on {
+			display: block;
+
+			@media screen and (min-width: $query__medium) {
+				right: 0;
+				visibility: visible;
+			}
+		}
+
+		@media screen and (min-width: $query__medium) {
+			position: fixed;
+			top: 0;
+			right: -$slidemenu__width;
+			display: block;
+			visibility: hidden;
+			overflow: auto;
+			width: $slidemenu__width;
+			height: 100%;
+			padding: 3em;
+			transition: $standard__transition;
+		}
+	}
+}
+
 .admin-bar {
 
 	.slide-menu {
-		top: 46px;
+
+		@media screen and (min-width: $query__medium) {
+			top: 46px;
+		}
 
 		@media screen and (min-width: 783px) {
 			top: 32px;
@@ -170,54 +240,49 @@
 	}
 }
 
-.slide-menu {
-	position: relative;
-	z-index: 99;
-	display: none;
-	width: 100%;
-	padding: 1.5em;
-	background: $theme__black;
-
-	&.toggled-on {
-		display: block;
-
-		@media screen and (min-width: $query__medium) {
-			right: 0;
-			visibility: visible;
-		}
-	}
-
-	@media screen and (min-width: $query__medium) {
-		position: fixed;
-		top: 0;
-		right: -$slidemenu__width;
-		display: block;
-		visibility: hidden;
-		overflow: auto;
-		width: $slidemenu__width;
-		height: 100%;
-		padding: 3em;
-		transition: $standard__transition;
-	}
-}
-
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+	position: relative;
+	padding: 1.5em;
+	border-bottom: 1px solid #252525;
+	background: $theme__black-footer;
+	color: #fff;
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		font-size: 0.778em;
+		font-weight: bold;
 		overflow: hidden;
+		clear: both;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+		text-transform: uppercase;
+
+		@media screen and (min-width: $query__large) {
+			font-size: 1.11em;
+		}
 	}
 
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
+	.nav-links {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
+		.nav-previous,
+		.nav-next {
+			width: 43%;
+
+			@media screen and (min-width: $query__large) {
+				width: 220px;
+			}
+		}
+
+		a {
+			display: block;
+			padding: 0.75em 0;
+			color: $theme__black;
+			background-color: #fff;
+		}
 	}
 }

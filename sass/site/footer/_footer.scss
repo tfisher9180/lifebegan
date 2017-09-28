@@ -1,0 +1,19 @@
+.site-footer {
+  position: relative;
+  clear: both;
+  color: $theme__footer-link;
+  background: $theme__black-footer;
+}
+
+.site-info {
+  font-size: 0.778em;
+  font-weight: bold;
+  margin: 1.5em auto;
+  padding: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+
+  a {
+    color: $theme__footer-link;
+  }
+}

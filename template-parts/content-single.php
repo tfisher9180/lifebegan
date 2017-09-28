@@ -7,9 +7,11 @@
  * @package LifeBegan
  */
 
+	global $post;
+
 ?>
 
-<div class="entry-background" style="background-image: url('');">
+<div class="entry-background <?php echo has_post_thumbnail() ? 'post-thumbnail' : ''; ?>"<?php echo has_post_thumbnail() ? ' style="background-image: url('."'".get_the_post_thumbnail_url()."'".');"' : ''; ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -54,5 +56,18 @@
 		<footer class="entry-footer">
 			<?php lifebegan_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
+
+		<?php
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		?>
+
 	</div><!-- .article-content-wrapper -->
+
+	<?php get_sidebar(); ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->
+
+<?php lifebegan_post_navigation(); ?>

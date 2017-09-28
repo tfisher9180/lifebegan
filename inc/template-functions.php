@@ -12,9 +12,20 @@
  * @return array
  */
 function lifebegan_body_classes( $classes ) {
+	global $post;
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
+	}
+
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'has-sidebar';
+	} else {
+		$classes[] = 'no-sidebar';
+	}
+
+	if ( isset ( $post->ID ) && get_the_post_thumbnail( $post->ID ) ) {
+		$classes[] = 'has-featured-image';
 	}
 
 	return $classes;
